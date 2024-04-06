@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>Coinflow Xchange</title>
 </head>
 
@@ -22,7 +23,7 @@
     <section class="hero container">
         <div class="hero_text">
             <h1>Discover the Ease of Trading Cryptocurrency and Gift Cards</h1>
-            <p>Welcome to Coinflow Xchange Where Crypto Meets Convenience. Experience the simplicity and convenience of
+            <p>Experience the simplicity and convenience of
                 exchanging your cryptocurrencies and gift cards with our
                 platform.</p>
             <div style="margin-bottom: .5rem;">Trade with us on:</div>
@@ -60,16 +61,28 @@
             <h2>Our Services</h2>
             <p>We offer a wide range of services.</p>
             <div class="services-items">
-                <article>
+                <article class="hidden">
+                    <div class="btc-exchange"></div>
                     <h3>Cryptocurrency Exchange</h3>
-                    <p> Easily trade various cryptocurrencies including Bitcoin, Ethereum, Litecoin, and more. Whether
-                        you're a seasoned trader or a newcomer to the crypto world, our intuitive platform ensures
+                    <p> Easily trade various cryptocurrencies including Bitcoin, Ethereum, Litecoin, and more. Our
+                        intuitive platform ensures
                         smooth
                         transactions at competitive rates.</p>
                 </article>
-                <article>
+                <article class="hidden">
+                    <div class="card-exchange">
+                        <div class="exchange exchange-amazon">
+                            <img src="assets/amazon.svg" alt="amazon">
+                        </div>
+                        <div class="exchange exchange-apple">
+                            <img src="assets/apple.svg" alt="apple">
+                        </div>
+                        <div class="exchange exchange-steam">
+                            <img src="assets/steam.svg" alt="steam">
+                        </div>
+                    </div>
                     <h3>Gift Card Exchange</h3>
-                    <p>Convert your unused gift cards into valuable cryptocurrencies effortlessly. Our platform allows
+                    <p>Our platform allows
                         you
                         to exchange gift cards from a wide range of retailers for digital assets, providing you with
                         more
@@ -79,58 +92,121 @@
         </div>
     </section>
 
-    <section class="mission container">
-        <div class="mission-item cryptos">
-            <img src="assets/ethereum.png" alt="ethereum">
-            <img src="assets/usdt.png" alt="usdt">
-            <img src="assets/bitcoin.png" alt="bitcoin">
+    <section class="container ether">
+        <img src="/assets/ethereum-img.png" alt="ethereum-img">
+    </section>
+
+    <section class="reasons container">
+        <h2>Why Choose Us?</h2>
+        <p>Coinflow Xchange features seamless and eas in crypto and gift card exchange</p>
+        <div class="reason-list">
+            <div class="reason hidden">
+                <div class="reason-icon">
+                    <img src="assets/convenience.svg" alt="convenience">
+                </div>
+                <h3> Convenience</h3>
+                <p>Convert your cryptocurrency and gift cards into assets quickly.</p>
+            </div>
+            <div class="reason hidden">
+                <div class="reason-icon">
+                    <img src="assets/options-btc.svg" alt="options">
+                </div>
+                <h3>Wide Range of Options</h3>
+                <p>Exchange your cryptocurrency or gift cards from leading retailers.</p>
+            </div>
+            <div class="reason hidden">
+                <div class="reason-icon">
+                    <img src="assets/security.svg" alt="security">
+                </div>
+                <h3>Security First</h3>
+                <p>We adhere to strict security measures to safeguard your transactions.</p>
+            </div>
+            <div class="reason hidden">
+                <div class="reason-icon">
+                    <img src="assets/transaction.svg" alt="transaction">
+                </div>
+                <h3>Fast Transactions</h3>
+                <p>Transactions are executed swiftly, allowing for access to funds.</p>
+            </div>
+            <div class="reason hidden">
+                <div class="reason-icon">
+                    <img src="assets/support.svg" alt="support">
+                </div>
+                <h3>Dedicated Support</h3>
+                <p>We strive to provide prompt and helpful assistance.</p>
+            </div>
         </div>
-        <div class="mission-item">
-            <h2>Why Choose Us?</h2>
-            <p>Coinflow Xchange features seamless and eas in crypto and gift card exchange</p>
-            <ul>
-                <li>
-                    <img src="assets/good.svg" alt="good">
-                    <div>Swift transactions ensure you never miss out on
-                        opportunities.</div>
-                </li>
-                <li>
-                    <img src="assets/good.svg" alt="good">
-                    <div>Advanced encryption protects your funds and information.</div>
-                </li>
-                <li>
-                    <img src="assets/good.svg" alt="good">
-                    <div>Enjoy favorable rates and low fees.</span>
-                </li>
-                <li>
-                    <img src="assets/good.svg" alt="good">
-                    <div>Round-the-clock assistance for all your inquiries</div>
-                </li>
-            </ul>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2>Reviews</h2>
+            <p>We can be trusted, but don't just take our word for it</p>
+            <div class="review-list">
+                <div class="review hidden"></div>
+                <div class="review hidden"></div>
+                <div class="review hidden"></div>
+            </div>
         </div>
     </section>
 
     <section class="gift-cards container">
         <h2 style="margin-bottom: 2rem;">Check Your Gift Cards Balance</h2>
         <div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
-            <div class="gift-cards-item"></div>
+            <div class="gift-cards-item amazon-item hidden">
+                <img src="assets/amazon.svg" alt="amazon">
+                <div>Amazon</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item steam-item hidden">
+                <img src="assets/steam.svg" alt="steam">
+                <div>Steam</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item play-item hidden">
+                <img src="assets/google-play.svg" alt="play">
+                <div>Play</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item apple-item hidden">
+                <img src="assets/apple.svg" alt="apple">
+                <div>Apple</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item xbox-item hidden">
+                <img src="assets/xbox.svg" alt="xbox">
+                <div>Xbox</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item spotify-item hidden">
+                <img src="assets/spotify.svg" alt="spotify">
+                <div>Spotify</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item nike-item hidden">
+                <img src="assets/nike.svg" alt="nike">
+                <div>Nike</div>
+                <a href=""></a>
+            </div>
+            <div class="gift-cards-item ebay-item hidden">
+                <img src="assets/ebay.svg" alt="ebay">
+                <div>Ebay</div>
+                <a href=""></a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <img src="assets/logo2.png" alt="logo">
+            <div>
+                <img src="assets/logo2.png" alt="logo">
+            </div>
+            <p>Your security is our priority. We employ advanced encryption and strict security measures to safeguard
+                your assets.</p>
             <div class="footer-links">
-                <img src="assets/whatsapp-icon.svg" alt="whatsapp-icon">
-                <img src="assets/instagram-logo.svg" alt="instagram-logo">
-                <img src="assets/twitter-icon.svg" alt="twitter-icon">
+                <img src="assets/whatsapp.svg" alt="whatsapp-icon">
+                <img src="assets/instagram.svg" alt="instagram-logo">
+                <img src="assets/twitter.svg" alt="twitter-icon">
             </div>
         </div>
     </footer>

@@ -18,38 +18,54 @@ body {
 
 body {
     font-family: "Roboto", sans-serif;
-    font-size: calc(16px + .2vw);
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: white;
-    background-color: hsl(209 100% 31%);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='hsl(209, 100%, 10%)' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, hsl(209, 100%, 31%), hsl(209, 100%, 25%), hsl(209, 100%, 20%), hsl(209, 100%, 15%), hsl(209, 100%, 10%));
+    background-color: var(--blue);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='hsl(209 100% 31% / 50%)' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, var(--blue), var(--black));
 }
 
 h1 {
-    font-size: calc(1.5rem + 1.5vw);
+    font-size: 2rem;
     margin-bottom: 1rem;
+    line-height: 1.3em;
+    color: hsl(0 0% 100% / 95%);
 }
 
 h2 {
     font-size: 1.7rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5em;
+    color: hsl(0 0% 100% / 95%);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
+    color: hsl(0 0% 100% / 95%);
 }
 
 p {
     line-height: 1.5rem;
-    color: hsl(0 0% 100% / 85%);
-    font-weight: 500;
+    color: hsl(0 0% 100% / 80%);
 }
 
 .container {
     width: 90%;
     margin: 0 auto;
     max-width: 1000px;
+}
+
+.hidden,
+.animate {
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    transition-delay: 200ms;
+    opacity: 0;
+    transform: translateY(6rem);
+}
+
+.animate {
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 header .container {
@@ -84,8 +100,7 @@ header a {
 }
 
 .hero_text {
-    max-width: 650px;
-    margin-bottom: 2rem;
+    max-width: 500px;
 }
 
 .hero_chat {
@@ -123,16 +138,17 @@ header a {
 
 .hero_cards {
     position: relative;
-    height: 24rem;
+    height: 18rem;
 }
 
 .float-item {
-    width: 10rem;
-    height: 20rem;
+    width: 40%;
+    aspect-ratio: 1/1.7;
+    max-width: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: .5rem;
     position: absolute;
     top: 0;
     animation: move 2s ease-in-out infinite;
@@ -162,7 +178,7 @@ header a {
 }
 
 .float-item img {
-    width: 4rem;
+    width: 40%;
 }
 
 @keyframes move {
@@ -175,115 +191,289 @@ header a {
     background: linear-gradient(to left bottom, var(--blue), var(--dark-blue));
     padding-block: 4rem;
     text-align: center;
+    margin-top: 4rem;
 }
 
 .services article {
-    padding: 2rem;
+    max-width: 500px;
 }
 
 .services-items {
     margin-top: 2rem;
+    margin-inline: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    justify-items: center;
+}
+
+.reviews {
+    padding-block: 4rem;
+    background: linear-gradient(to left bottom, var(--blue), var(--dark-blue));
+    margin-bottom: 8rem;
+}
+
+.review-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 2rem;
+    margin-inline: 1rem;
 }
 
-.mission {
-    display: flex;
-    flex-direction: column;
-    padding: 4rem 0;
-    gap: 4rem;
-}
-
-.cryptos {
-    position: relative;
-    width: 100%;
-    height: 10rem;
-}
-
-.cryptos img {
-    --left: unset;
-    --right: unset;
-    position: absolute;
-    width: 8rem;
-    height: 8rem;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.cryptos img[alt=ethereum] {
-    --left: 15%;
-    left: 20%;
-    transform: translate(0, -50%);
-    animation: shake 3s ease-in-out infinite;
-}
-
-.cryptos img[alt=usdt] {
-    --right: 15%;
-    left: unset;
-    right: 20%;
-    transform: translate(0, -50%);
-    animation: shake 3s ease-in-out infinite;
-}
-
-@keyframes shake {
-    50% {
-        left: var(--left);
-        right: var(--right);
+@media (min-width: 700px) {
+    .review-list {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-.mission p {
-    margin-bottom: 1rem;
+.review {
+    height: 10rem;
+    border-radius: 8px;
+    background: hsl(0 0% 100% / 7%);
 }
 
-.mission ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    color: hsl(0 0% 100% / 85%);
-    gap: .5rem;
+.btc-exchange {
+    width: 50%;
+    max-width: 20rem;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    background-image: url(assets/btc-exchange.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.mission li {
+.card-exchange {
+    height: 14rem;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: .5rem;
     align-items: center;
+    justify-items: center;
 }
 
-.mission li img {
-    width: 1rem;
+.card-exchange * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.exchange {
+    width: 50%;
+    max-width: 10rem;
+    aspect-ratio: 1.7 / 1;
+    background: green;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top right, hsl(190, 79%, 48%), hsl(243, 49%, 41%));
+}
+
+.exchange img {
+    width: 25%;
+}
+
+.exchange-amazon {
+    margin-left: -5rem;
+    margin-top: -4rem;
+    background-image: linear-gradient(to top right, hsl(340, 10%, 6%), hsl(340, 10%, 16%));
+}
+
+.exchange-steam {
+    margin-right: -5rem;
+    background-image: linear-gradient(to top right, hsl(239, 34%, 25%), hsl(239, 34%, 35%));
+    margin-bottom: -4rem;
+}
+
+.reasons {
+    padding: 6rem 1rem;
+    text-align: center;
+}
+
+.reason-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.reason-icon {
+    width: 3rem;
+    height: 3rem;
+    background: hsl(0 0% 100% / 40%);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reason-icon img {
+    width: 2rem;
+}
+
+.cryptos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.cryptos img {
+    width: 90%;
+    max-width: 500px;
+    animation: float 3s ease-in-out infinite;
+    transform: translateY(-20px);
+}
+
+.reason {
+    width: 100%;
+    max-width: 25rem;
+    padding: 2rem;
+    border-radius: 8px;
+    background: linear-gradient(to left bottom, var(--blue), var(--dark-blue));
+    text-align: center;
+}
+
+.reason p {
+    color: hsl(0 0% 100% / 70%);
+}
+
+.reason h3 {
+    color: hsl(0 0% 100% / 80%);
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(20px);
+    }
 }
 
 .gift-cards {
     padding-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
-.gift-cards > div {
-    display: flex;
-    flex-direction: column;
+.gift-cards>div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 1fr;
     gap: 1rem;
 }
 
 .gift-cards-item {
-    height: 5rem;
+    --shadow: hsl(0 0% 0% / 50%);
+    padding: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     background: hsl(209 100% 31%);
     border-radius: .5rem;
 }
 
+.ether {
+    display: flex;
+    padding-top: 4rem;
+    align-items: center;
+    justify-content: center;
+    animation: ether-float 2s ease-in-out infinite;
+}
+
+@keyframes ether-float {
+    50% {
+        transform: translateY(2rem);
+    }
+}
+
+.ether img {
+    width: 80%;
+    max-width: 400px;
+}
+
+.gift-cards-item>img {
+    width: 3rem;
+}
+
+.amazon-item {
+    background-image: linear-gradient(to top right, hsl(340, 10%, 6%), hsl(340, 10%, 16%));
+}
+
+.apple-item {
+    background-image: linear-gradient(to top right, hsl(217, 90%, 57%), hsl(191, 92%, 65%));
+    transition: 600ms;
+}
+
+.ebay-item {
+    background: hsl(230, 78%, 48%);
+    transition: 300ms;
+}
+
+.play-item {
+    background-image: linear-gradient(to top right, hsl(218, 91%, 63%), hsl(218, 91%, 73%));
+}
+
+.spotify-item {
+    background: hsl(156, 99%, 35%);
+    transition: 500ms;
+}
+
+.nike-item {
+    background: hsl(13, 97%, 55%);
+}
+
+.xbox-item {
+    background: hsl(119, 70%, 30%);
+}
+
+.steam-item {
+    background-image: linear-gradient(to bottom left, hsl(0, 0%, 0%), hsl(201, 46%, 14%));
+    transition: 400ms;
+}
+
+.visa-item {
+    background-image: linear-gradient(to top right, hsl(213, 77%, 21%), hsl(201, 78%, 49%));
+}
+
+.gift-cards-item a {
+    background: none;
+    height: 2rem;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1rem;
+    box-shadow: inset 2px 2px 5px var(--shadow);
+    background-image: url(assets/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 70%;
+    animation: shake 2s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+    100%,
+    0% {
+        background-position-x: 45%;
+    }
+
+    50% {
+        background-position-x: 55%;
+    }
+}
+
 footer {
     padding-block: 4rem;
+    background: hsl(209 100% 11%);
 }
 
 footer .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 footer img[alt=logo] {
@@ -292,29 +482,25 @@ footer img[alt=logo] {
 }
 
 .footer-links img {
-    width: 2rem;
+    width: 1.5rem;
     display: inline-block;
     margin-left: .3rem;
 }
 
-@media (min-width: 500px) {
-    .gift-cards > div {
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-    }
+.footer-links {
+    min-width: 7.5rem;
+}
+
+footer p {
+    max-width: 600px;
+    color: hsl(0 0% 100% / 70%);
+    font-weight: 400;
 }
 
 @media (min-width: 900px) {
-    .gift-cards > div {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .mission {
+    footer .container {
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .services-items {
